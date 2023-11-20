@@ -24,9 +24,6 @@ const AVATAR_MAX_HEIGHT = 144;
 const AVATAR_MIN_HEIGHT = 55;
 const ACTIONS_BAR_MAX_HEIGHT = 122;
 const ACTIONS_BAR_MIN_HEIGHT = 63;
-const fakeImages = Array.from({ length: 10 }, (_, index) => ({
-  key: index.toString(),
-}));
 
 function generateRandomColor() {
   const x = Math.floor(Math.random() * 256);
@@ -52,6 +49,9 @@ const _renderItem = ({ item, index }) => (
 export default function App() {
   const scrollY = useRef(new Animated.Value(0)).current;
   const { width } = useWindowDimensions();
+  const fakeImages = Array.from({ length: 10 }, (_, index) => ({
+    key: index.toString(),
+  }));
 
   // TOP BAR ANIMATIONS
 
@@ -165,7 +165,6 @@ export default function App() {
             backgroundColor: BG_COLOR_BAR,
             flexDirection: "row",
             justifyContent: "space-between",
-            height: AVATAR_MAX_HEIGHT,
             paddingHorizontal: 15,
             paddingTop: 18,
             height: actionsBarHeight,
@@ -276,7 +275,7 @@ export default function App() {
                 style={{
                   color: PRIMARY_COLOR,
                   fontSize: 21,
-                  fontWeight: 600,
+                  fontWeight: "600",
                 }}
               >
                 Add group description
@@ -305,7 +304,7 @@ export default function App() {
                   style={{
                     color: GRAY_TEXT,
                     fontSize: 18,
-                    fontWeight: 600,
+                    fontWeight: "600",
                     marginTop: 10,
                   }}
                 >
@@ -315,7 +314,7 @@ export default function App() {
                   style={{
                     color: GRAY_TEXT,
                     fontSize: 18,
-                    fontWeight: 600,
+                    fontWeight: "600",
                     marginTop: 10,
                   }}
                 >
